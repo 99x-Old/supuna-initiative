@@ -6,19 +6,12 @@
 ## Services
 
 -   User
-    
--   Initiative
-    
--   Auth
-    
--   Notification
-    
--   Poster
-    
--   Web
-    
--   File
-    
+-   Initiative    
+-   Auth    
+-   Notification    
+-   Poster    
+-   Web   
+-   File   
 -   Gateway
     
 
@@ -28,17 +21,15 @@ User service stores and does all the action related to users/members.
 
 Technologies:
 
--   NodeJs/[Koa 2](https://koajs.com/)
-    
--   MongoDB
-    
+-   NodeJs/[Koa 2](https://koajs.com/)   
+-   MongoDB   
 -   Docker Containers
     
 
 Database Design:
 
 _Users_
-
+```javascript 
 {
   first_name: String,
   last_name: String,
@@ -54,21 +45,23 @@ _Users_
   created_at: Date,
   updated_at: Date,
 }
-
+```
 _Genders_
-
+```javascript 
 {
   _id: ObjectId,
   gender: String,
 }
-
+```
 _Roles_
 
+```javascript 
 {
   _id: ObjectId,
   role: String,
   permission:[]
 }
+```
 
   
 Initiative Service
