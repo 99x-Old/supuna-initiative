@@ -1,0 +1,9 @@
+[lints]
+all=error
+unclear-type=warn
+untyped-type-import=off
+untyped-import=off
+[untyped]
+.*/node_modules/.*
+[options]
+module.name_mapper='^services\/\(.*\)$' -> '<PROJECT_ROOT>/src/services/\1'

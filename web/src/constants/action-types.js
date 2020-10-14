@@ -1,0 +1,8 @@
+export const SET_AUTH = 'SET_AUTH';
+export const SET_PROFILE = 'SET_PROFILE';
+export const UPDATE_PROFILE = 'UPDATE_PROFILE';
+export const SET_SETTINGS = 'SET_SETTINGS';
+export const UPDATE_SETTINGS = 'UPDATE_SETTINGS';
+export const SET_NOTIFICATION_STATUS = 'NOTIFICATION_STATUS';
+export const SET_ERROR = 'SET_ERROR';
+export const SET_POPUP = 'SET_POPUP';

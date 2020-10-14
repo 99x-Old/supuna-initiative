@@ -1,0 +1,98 @@
+version: '3.7'
+
+services:
+  kong-database:
+    volumes:
+      - ./data/kong:/var/lib/postgresql/data
+    image: postgres:9.6
+    restart: always
+    networks:
+      - kong-net
+    environment:
+      POSTGRES_USER: kong
+      POSTGRES_DB: kong
+      POSTGRES_PASSWORD: kong
+    ports:
+      - ${DB_PORT}:5432
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "kong"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+  kong-migration:
+    image: kong:latest
+    command: "kong migrations bootstrap"
+    networks:
+      - kong-net
+    restart: on-failure
+    environment:
+      KONG_PG_HOST: kong-database
+      KONG_PG_PASSWORD: kong
+    links:
+      - kong-database
+    depends_on:
+      - kong-database
+  kong:
+    volumes:
+      - ../config:/etc/kong
+    container_name: ennoble-x-gateway
+    build:
+      context: kong
+    restart: always
+    networks:
+      - kong-net
+      - backend
+    environment:
+      KONG_PG_HOST: kong-database
+      KONG_PROXY_LISTEN: 0.0.0.0:8000
+      KONG_PROXY_LISTEN_SSL: 0.0.0.0:8443
+      KONG_ADMIN_LISTEN: 0.0.0.0:8001
+      KONG_PG_PASSWORD: kong
+      KONG_TRUSTED_IPS: 0.0.0.0/0
+    depends_on:
+      - kong-migration
+      - kong-database
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://kong:8001"]
+      interval: 5s
+      timeout: 2s
+      retries: 15
+    ports:
+      - ${KONG_PORT}:8000
+      - ${KONG_PORT_SSL}:8443
+      - ${KONG_PORT_ADMIN}:8001
+  konga-prepare:
+    image: pantsel/konga:next
+    command: "-c prepare -a postgres -u postgresql://kong:kong@kong-database:5432/konga_db"
+    networks:
+      - kong-net
+    restart: on-failure
+    links:
+      - kong-database
+    depends_on:
+      - kong-database
+  konga:
+    image: pantsel/konga
+    ports:
+      - ${KONGA_PORT}:1337
+    networks:
+      - kong-net
+    volumes:
+      - ./data/kongo:/kongo
+    environment:
+      - TOKEN_SECRET=testme
+      - STORAGE_PATH=/kongo/data
+  echo-test:
+    image: mendhak/http-https-echo
+    networks:
+      - kong-net
+
+volumes:
+  ennoble-x-gatway-db:
+    driver: local
+networks:
+  kong-net:
+    driver: bridge
+  backend:
+    driver: bridge
+    name: ennoble-x-net

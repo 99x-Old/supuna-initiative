@@ -1,0 +1,33 @@
+version: '3.7'
+services:
+  zookeeper:
+    image: zookeeper:3.4.9
+    hostname: zookeeper
+    networks:
+      - local
+    environment:
+      ZOO_MY_ID: 1
+      ZOO_PORT: 2181
+      ZOO_SERVERS: server.1=zookeeper:2888:3888
+    volumes:
+      - ./zk-single-kafka-single/zookeeper/data:/data
+      - ./zk-single-kafka-single/zookeeper/datalog:/datalog
+  kafka:
+    container_name: ennoble-x-kafka
+    depends_on:
+      - zookeeper
+    build:
+      context: kafka
+    tty: true
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ../config:/app/kafka
+    networks:
+      - local
+      - backend
+networks:
+  backend:
+    driver: bridge
+    name: ennoble-x-net
+  local:
+    driver: bridge

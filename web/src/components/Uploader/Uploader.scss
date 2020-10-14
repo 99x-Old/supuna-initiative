@@ -1,0 +1,9 @@
+@import '~react-image-crop/lib/ReactCrop.scss';
+.ReactCrop{
+  div{
+    max-height: inherit;
+    img{
+      max-height: inherit;
+    }
+  }
+}

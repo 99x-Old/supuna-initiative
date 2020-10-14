@@ -1,0 +1,40 @@
+services:
+  mongodb:
+    build:
+      args:
+        MONGODB_VERSION: ${MONGODB_VERSION}
+        TZ: ${TZ}
+      context: mongodb
+    ports:
+      - ${DB_PORT}:27017
+    volumes:
+      - mongodata:/data/db:cached
+    networks:
+      - local
+  node:
+    container_name: ennoble-x-initiative
+    env_file:
+      - .env
+    depends_on:
+      - mongodb
+    networks:
+      - backend
+      - local
+    build:
+      args:
+        TZ: ${TZ}
+      context: node
+    tty: true
+    volumes:
+    - ../:/app:cached
+    command: >
+      sh -c "sh .born/serve.sh"
+version: '3.7'
+volumes:
+  mongodata:
+networks:
+  backend:
+    driver: bridge
+    name: ennoble-x-net
+  local:
+    driver: bridge

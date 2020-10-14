@@ -1,0 +1,29 @@
+image: node
+
+stages:
+  - lint
+  - test
+  - deploy
+
+lint:
+  stage: lint
+  script:
+    - echo $azure_99x
+    - npm i
+    - node_modules/eslint/bin/eslint.js -c .eslintrc src
+test:
+  stage: test
+  script:
+    - npm i
+    - yarn test:no-watch
+deploy to production:
+  stage: deploy
+#  only:
+#    - master
+  script:
+    - npm i
+    - yarn build
+    - apt-get update -y
+    - apt-get -y install rsync
+    - sh .gitlab/rsync-script.sh supuna@35.240.147.222:~/ennoble-x/web/ build
+    - sh .gitlab/rsync-script.sh supuna@35.240.147.222:~/ennoble-x/web/ .born

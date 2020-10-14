@@ -1,0 +1,23 @@
+image: node
+
+stages:
+  - lint
+  - test
+  - deploy
+
+eslint:
+  stage: lint
+  script:
+    - yarn
+    - yarn lint
+
+testing:
+  stage: test
+  script:
+    - yarn
+    - yarn test
+deploy:
+  stage: deploy
+  script:
+    - yarn
+    - yarn build

@@ -1,0 +1,10 @@
+image: node
+
+stages:
+  - lint
+
+eslint:
+  stage: lint
+  script:
+    - npm i
+    - node_modules/eslint/bin/eslint.js -c .eslintrc src

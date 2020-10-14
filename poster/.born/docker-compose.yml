@@ -1,0 +1,60 @@
+version: '3.7'
+services:
+  db:
+    networks:
+      - local
+    build:
+      args:
+        MARIADB_VERSION: ${MARIADB_VERSION}
+        TZ: ${TZ}
+      context: mariadb
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - ${DB_PORT}:3306
+    volumes:
+      - db_data:/var/lib/mysql
+  nginx:
+    container_name: ennoble-x-poster
+    networks:
+      - backend
+      - local
+    depends_on:
+      - php
+    build:
+      args:
+        NGINX_VERSION: ${NGINX_VERSION}
+        TZ: ${TZ}
+      context: nginx
+    volumes:
+      - ./logs/nginx/:/var/log/nginx
+      - ../:/app
+  php:
+    networks:
+      - local
+      - backend
+    build:
+      args:
+        PHP_VERSION: ${PHP_VERSION}
+        TZ: ${TZ}
+      context: php
+    tty: 'true'
+    volumes:
+      - ../:/app:rw
+  cli:
+      networks:
+        - local
+        - backend
+      image: lifeeka/cli:latest
+      working_dir: /app
+      tty: 'true'
+      volumes:
+        - ../:/app:rw
+networks:
+  backend:
+    driver: bridge
+    name: ennoble-x-net
+  local:
+    driver: bridge
+volumes:
+  db_data:
