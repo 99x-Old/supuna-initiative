@@ -15,9 +15,6 @@ mongoose.connect(process.env.CONNECTION_STRING, {
 }).then(() => console.log('Mongodb is connected!'));
 mongoose.set('useCreateIndex', true);
 
-// repository
-const fileRepository = new FileRepository();
-
 /**
  * Upload file method
  * @returns {Promise<*>}
@@ -26,12 +23,11 @@ const hello = async (event: any) => {
   const auth = authMiddleware(event.headers);
 
   if (auth) {
-    await fileRepository.hello();
-    mongoose.connection.close();
-
+    // eslint-disable-next-line no-console
+    console.log(auth);
     return response({}, 'Authed');
   }
   mongoose.connection.close();
-  return response({ a: 88 }, 'Unauthorized', 401);
+  return response({ a: 88 }, 'Unauthorized', 400);
 };
 export default runWarm(hello);

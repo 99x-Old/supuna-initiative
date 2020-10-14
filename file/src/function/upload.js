@@ -46,7 +46,6 @@ const upload = async (event: any) => {
     Metadata: {},
   };
   await s3.putObject(params).promise();
-  // const auth = authMiddleware(event.headers);
   const url = `https://${process.env.S3_BUCKET}.s3.ap-southeast-1.amazonaws.com/${params.Key}`;
 
   const fileData = {
@@ -55,14 +54,20 @@ const upload = async (event: any) => {
     data: data.data ? data.data : {},
   };
 
-  const f = await fileRepository.addFile(fileData);
+  try {
+    const fileResponse = await fileRepository.addFile(fileData);
 
-  return response({
-    f,
-    reference,
-    url,
-  },
-  'Successful!',
-  200);
+    return response({
+      fileResponse,
+      reference,
+      url,
+    },
+    'Successful!',
+    200);
+  } catch (error) {
+    return response({ message: error.name, stack: error.stack },
+      'Successful!',
+      400);
+  }
 };
 export default runWarm(upload);

@@ -233,7 +233,7 @@ _Initiative Member_
 }
 ```
 
-_InitiativeMember Kudos_
+_Initiative Member Kudos_
 
 ```javascript 
 {
@@ -250,7 +250,7 @@ _InitiativeMember Kudos_
       ref: 'InitiativeKudosModel', 
     },
     created_at: { type: Date, default: Date.now },
-  }
+}
 ```
 
 _Initiative Member Rating_
@@ -266,7 +266,7 @@ _Initiative Member Rating_
     rate: Number,
     note: String,
     created_at: { type: Date, default: Date.now },
-  }
+}
 ```
 _Initiative Objective_
 
@@ -283,7 +283,7 @@ _Initiative Objective_
     objective: String,
     added_by: String,
     created_at: { type: Date, default: Date.now },
-  }
+}
 ```
 _Initiative Year_
 
