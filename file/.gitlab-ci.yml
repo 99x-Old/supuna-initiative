@@ -1,0 +1,17 @@
+image: node
+
+stages:
+  - lint
+  - deploy
+
+eslint:
+  stage: lint
+  script:
+    - yarn
+    - node_modules/eslint/bin/eslint.js -c .eslintrc src
+
+deploy:
+  stage: deploy
+  script:
+    - yarn
+    - yarn deploy:production

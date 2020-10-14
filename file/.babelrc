@@ -1,0 +1,37 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "targets": {
+          "node": "8.10"
+        }
+      }
+    ]
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ],
+    [
+      "@babel/plugin-proposal-class-properties"
+    ],
+    [
+      "@babel/plugin-transform-flow-strip-types"
+    ],
+    [
+      "babel-plugin-module-resolver",
+      {
+        "root": [
+          "./src"
+        ],
+        "alias": {
+          "@config": "config"
+        }
+      }
+    ]
+  ]
+}
