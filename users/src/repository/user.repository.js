@@ -37,14 +37,6 @@ export default class UserRepository implements UserRepositoryInterface {
     const user = new User(userData);
     await user.save();
 
-    // const passwordData = {
-    //   password: param.password,
-    //   active: true,
-    //   user: user._id,
-    // };
-    // const password = new Password(passwordData);
-    // await password.save();
-
     const Pending = await this.getStatusByName('active');
     const statusData = { status: Pending._id, user: user._id };
     const userStatus = new UserStatus(statusData);

@@ -17,7 +17,8 @@
 
 ### User Service
 
-User service stores and does all the action related to users/members.
+User service stores and does all the action related to users/members. 
+It also contains user details, user kudos. User service is  the most important service which require by all the other services.
 
 Technologies:
 
@@ -31,35 +32,69 @@ Database Design:
 _Users_
 ```javascript 
 {
-  first_name: String,
-  last_name: String,
-  bio: String,
-  birth: Date,
-  email: String,
-  mobile: Number,
-  gender: {
-    type: Schema.Types.ObjectId,
-    ref: Gender, 
-  },
-  uuid: String,
-  created_at: Date,
-  updated_at: Date,
+    first_name: String,
+    last_name: String,
+    bio: String,
+    birth: Date,
+    email: String,
+    mobile: Number,
+    gender: Schema.Types.ObjectId,,
+    uuid: String,
+    created_at: Date,
+    updated_at: Date,
 }
 ```
-_Genders_
+_Gender_
 ```javascript 
 {
-  _id: ObjectId,
-  gender: String,
+    gender: String,
 }
 ```
 _Roles_
 
 ```javascript 
 {
-  _id: ObjectId,
-  role: String,
-  permission:[]
+    role: String,
+    permission:[]
+}
+```
+_Kudos_
+
+```javascript 
+{
+    kudos: String,
+    description: String,
+    uuid: String,
+    created_at: { type: Date, default: Date.now },
+}
+```
+_Status_
+
+```javascript 
+{
+    status: String,
+    description: String,
+}
+```
+_User Kudos_
+
+```javascript 
+{
+    kudos: Schema.Types.ObjectId,
+    user: Schema.Types.ObjectId,
+    givenBy: Schema.Types.ObjectId,
+    reason: String,
+    created_at: { type: Date, default: Date.now },
+}
+```
+_User Status_
+
+```javascript 
+{
+    status: Schema.Types.ObjectId,
+    user: Schema.Types.ObjectId,
+    reason: String,
+    created_at: { type: Date, default: Date.now },
 }
 ```
 
