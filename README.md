@@ -20,7 +20,7 @@
  <tbody>
  <tr>
  <td>NodeJs/Koa 2</td>
- <td bgcolor="green">YES</td>
+ <td bgcolor="green">✔️</td>
  <td>NO</td>
  <td>NO</td>
  <td>YES</td>
