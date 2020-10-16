@@ -6,7 +6,7 @@ import type { UserMiniType } from '../type/user.type';
 export default class AuthService {
   async auth(username: string, password: string, param: {} = {}) {
     return this.verifyLogin(username, password)
-      .then(async (val) => {
+      .then(async (val: string) => {
         const user = val.data.data;
         return this.getToken(user).then((response: {}) => {
           const data = response;
