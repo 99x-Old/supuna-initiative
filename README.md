@@ -480,6 +480,7 @@ _Comments_
 
 
 ### Web Service
+![](https://raw.githubusercontent.com/99xtechnology/supuna-initiative/dev/web_screen.png)
 
 Web Service is the web interface which provides web users to access the system.
 
