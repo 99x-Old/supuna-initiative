@@ -1,0 +1,45 @@
+services:
+  node:
+    container_name: ennoble-x-notification
+    networks:
+      - backend
+      - local
+    build:
+      args:
+        TZ: ${TZ}
+      context: node
+    tty: true
+    volumes:
+    - ../:/app:rw
+    - ./logs/node:/var/log/ennoble-x
+    command: >
+      sh -c "yarn && yarn start"
+  redis:
+    networks:
+      - local
+    build:
+      args:
+        TZ: ${TZ}
+      context: redis
+    tty: true
+  mongodb:
+    build:
+      args:
+        MONGODB_VERSION: ${MONGODB_VERSION}
+        TZ: ${TZ}
+      context: mongodb
+    ports:
+      - ${DB_PORT}:27017
+    volumes:
+      - mongodata:/data/db:cached
+    networks:
+      - local
+version: '3.7'
+volumes:
+  mongodata:
+networks:
+  backend:
+    driver: bridge
+    name: ennoble-x-net
+  local:
+    driver: bridge

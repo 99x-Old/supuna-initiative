@@ -1,0 +1,6 @@
+
+ARG MONGODB_VERSION
+FROM mongo:${MONGODB_VERSION}
+
+    
+    
