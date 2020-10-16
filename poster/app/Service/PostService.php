@@ -46,10 +46,10 @@ class PostService
 
     /**
      * Add Post
-     * @param user
+     * @param string $reference
      * @return mixed
      */
-    public function list($reference)
+    public function list(string $reference)
     {
         return $this->repository->listPost($reference);
     }

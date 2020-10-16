@@ -3,6 +3,8 @@
 
 ![](https://raw.githubusercontent.com/99xtechnology/supuna-initiative/dev/diagram.png?token=AAOEUR2IDC3B3OSYF7A67G27SBXV6 "Carecare > Ennoble-X Case Study - Initiative > Initiative.png")
 
+
+
 ## Services
 
 -   User
@@ -14,7 +16,6 @@
 -   File   
 -   Gateway
     
-
 ### User Service
 
 User service stores and does all the action related to users/members. 
