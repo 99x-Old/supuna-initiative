@@ -376,7 +376,7 @@ _Member Type_
 ```
 
 ### Auth Service
-![](https://raw.githubusercontent.com/99xtechnology/supuna-initiative/dev/auth.png?token=AAOEUR2IDC3B3OSYF7A67G27SBXV6)
+![](https://raw.githubusercontent.com/99xtechnology/supuna-initiative/dev/auth.png?token=AAOEUR5BOJOVX6IDMJHDCXS7SL7EQ)
 
 Auth service does all the action related to authentication such as generating oAuth token and validation it. 
 Currently, auth service uses Azure active directory to authenticate user to the system.
