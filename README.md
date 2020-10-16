@@ -481,6 +481,7 @@ _Comments_
 
 ### Web Service
 ![](https://github.com/99xtechnology/supuna-initiative/blob/dev/web_screen.png?raw=true)
+![](https://github.com/99xtechnology/supuna-initiative/blob/dev/web_screen1.png?raw=true)
 
 Web Service is the web interface which provides web users to access the system.
 
