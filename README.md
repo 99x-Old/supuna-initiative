@@ -26,7 +26,7 @@
  |Docker Containers|️✔️||✔️|✔️|✔️|✔️|✔️|✔️|✔️|
  |MongoDB||||✔️||✔️||✔️||
  |MariaDB||️|️|️|️|️|️✔️|️|️|
- |Azure Active Directory/OAuth 2||||||||||
+ |Azure Active Directory/OAuth 2|✔️|||||||||
  |Kafka|||||✔️|✔️||||
  |Socket.IO||||||✔️||||
  |Kong|||✔️|||||||
