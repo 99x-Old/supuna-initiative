@@ -3,178 +3,22 @@
 
 ![](https://raw.githubusercontent.com/99xtechnology/supuna-initiative/dev/diagram.png?token=AAOEUR2IDC3B3OSYF7A67G27SBXV6)
 
- <table>
- <thead>
- <tr>
- <th>Technology</th>
- <th>Auth</th>
- <th>File</th>
- <th>Gateway</th>
- <th>Initiative</th>
- <th>Kafka</th>
- <th>Notification</th>
- <th>Poster</th>
- <th>Users</th>
- <th>Web</th>
- </tr> 
- <tbody>
- <tr>
- <td>NodeJs/Koa 2</td>
- <td bgcolor="green">✔️</td>
- <td>NO</td>
- <td>NO</td>
- <td>YES</td>
- <td>NO</td>
- <td>YES</td>
- <td>NO</td>
- <td>YES</td>
- <td>NO</td>
- </tr>
- <tr>
- <td>PHP/Laravel</td>
- <td>&nbsp;NO</td>
- <td>&nbsp;NO</td>
- <td>&nbsp;NO</td>
- <td>&nbsp;NO</td>
- <td>&nbsp;NO</td>
- <td>YES</td>
- <td>&nbsp;NO</td>
- <td>&nbsp;NO</td>
- </tr>
- <tr>
- <td>Docker Containers</td>
- <td bgcolor="green">&nbsp;YES</td>
- <td>NO</td>
- <td>YES</td>
- <td>YES</td>
- <td>YES</td>
- <td>YES</td>
- <td>YES</td>
- <td>YES</td>
- <td>YES</td>
- </tr>
- <tr>
- <td>MongoDB</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>YES</td>
- <td>NO</td>
- <td>YES</td>
- <td>NO</td>
- <td>YES</td>
- <td>NO</td>
- </tr>
- <tr>
- <td>MariaDB</td>
- <td>NO</td>
- <td>&nbsp;NO</td>
- <td>&nbsp;NO</td>
- <td>&nbsp;NO</td>
- <td>&nbsp;NO</td>
- <td>&nbsp;NO</td>
- <td>&nbsp;NO</td>
- <td>&nbsp;NO</td>
- <td>&nbsp;NO</td>
- </tr>
- <tr>
- <td>Azure Active Directory/OAuth 2</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- </tr>
- <tr>
- <td>Kafka</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>YES</td>
- <td>YES</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- </tr>
- <tr>
- <td><a href="http://Socket.IO">Socket.IO</a></td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>YES</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- </tr>
- <tr>
- <td>Kong</td>
- <td>NO</td>
- <td>NO</td>
- <td>YES</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- </tr>
- <tr>
- <td>ReactJs/Redux</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>YES</td>
- </tr>
- <tr>
- <td>Material-UI</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>YES</td>
- </tr>
- <tr>
- <td>Serverless Framework</td>
- <td>NO</td>
- <td>YES</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- </tr>
- <tr>
- <td>AWS Lambda</td>
- <td>NO</td>
- <td>YES</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- <td>NO</td>
- </tr>
- </tbody>
- </table>
+ |Technology|Auth|File|Gateway|Initiative|Kafka|Notification|Poster|Users|Web|
+ |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |
+ |NodeJs/Koa 2|✔️|||✔️||✔️||✔️||
+ |PHP/Laravel|️|️|️|️|️|✔️|️|️|️|
+ |Docker Containers|️✔️||✔️|✔️|✔️|✔️|✔️|✔️|✔️|
+ |MongoDB||||✔️||✔️||✔️||
+ |MariaDB||️|️|️|️|️|️|️|️|
+ |Azure Active Directory/OAuth 2||||||||||
+ |Kafka|||||✔️|✔️||||
+ |Socket.IO||||||✔️||||
+ |Kong|||✔️|||||||
+ |ReactJs/Redux|||||||||✔️|
+ |Material-UI|||||||||✔️|
+ |Serverless Framework||✔️||||||||
+ |AWS Lambda||✔️||||||||
+
  
 ## Services
 
