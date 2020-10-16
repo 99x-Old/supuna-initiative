@@ -451,6 +451,8 @@ Poster service handle all the Post and comments for actions, meeting , wall ...e
 -   MariaDB
 -   Docker containers
 
+Database Design:
+
 _Posts_
 
  |Column|Type|
