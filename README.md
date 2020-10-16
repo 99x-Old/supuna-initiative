@@ -1,7 +1,7 @@
 # 99X Initiatives
 
 
-![](https://raw.githubusercontent.com/99xtechnology/supuna-initiative/dev/diagram.png?token=AAOEUR2IDC3B3OSYF7A67G27SBXV6 "Carecare > Ennoble-X Case Study - Initiative > Initiative.png")
+![](https://raw.githubusercontent.com/99xtechnology/supuna-initiative/dev/diagram.png?token=AAOEUR2IDC3B3OSYF7A67G27SBXV6)
 
 
 
@@ -376,6 +376,7 @@ _Member Type_
 ```
 
 ### Auth Service
+![](https://raw.githubusercontent.com/99xtechnology/supuna-initiative/dev/auth.png?token=AAOEUR2IDC3B3OSYF7A67G27SBXV6)
 
 Auth service does all the action related to authentication such as generating oAuth token and validation it. 
 Currently, auth service uses Azure active directory to authenticate user to the system.
