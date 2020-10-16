@@ -23,7 +23,7 @@
  |PHP/Laravel|️|️|️|️|️|✔️|️|️|️|
  |Docker Containers|️✔️||✔️|✔️|✔️|✔️|✔️|✔️|✔️|
  |MongoDB||||✔️||✔️||✔️||
- |MariaDB||️|️|️|️|️|️|️|️|
+ |MariaDB||️|️|️|️|️|️✔️|️|️|
  |Azure Active Directory/OAuth 2||||||||||
  |Kafka|||||✔️|✔️||||
  |Socket.IO||||||✔️||||
@@ -44,6 +44,7 @@
 -   Web   
 -   File   
 -   Gateway
+-   Kafka
     
 ### User Service
 
@@ -442,7 +443,37 @@ Technologies:
 
 ### Poster Service
 
-Poster service handle all the feedbacks (Post, Comments, likes…etc)
+Poster service handle all the Post and comments for actions, meeting , wall ...etc.
+
+-   PHP/Laravel
+-   MariaDB
+-   Docker containers
+
+_Posts_
+
+ |Column|Type|
+ |--- |--- |
+|id|bigint|
+|content|longtext| 
+|user|char|
+|uuid|char|
+|reference|varchar|
+|created_at|timestamp|
+|updated_at|timestamp|
+
+_Comments_
+
+ |Column|Type|
+ |--- |--- |
+|id|bigint|
+|content|longtext|
+|post|bigint|
+|user|char|
+|uuid|char|
+|reference|varchar|
+|created_at|timestamp|
+|updated_at|timestamp|
+
 
 ### Web Service
 
@@ -456,9 +487,21 @@ Technologies:
 
 ### File Service
 
-File service handle all the any cation related to files including cropping/resizing images
+File service handle all the action related to files including cropping/resizing images. In current release this only used for handling profile pictures.
 
 Technologies:
 
 -   Serverless Framework 
 -   AWS Lambda
+
+### Kafka Service
+
+Kafka service work as message broker which handle all the communications between services.
+Technologies:
+
+-   Docker Containers
+-   Kafka
+
+### License
+
+This project is MIT licensed.
