@@ -3,12 +3,7 @@ export type UserType = {
   first_name: string,
   last_name: string,
   email: string,
-  bio: string,
-  birth: string,
-  mobile: string,
-  gender: string,
-  status: boolean,
-  files?: any
+  bio: string
 };
 export type UserMiniType = {
   id: string,
