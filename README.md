@@ -3,8 +3,179 @@
 
 ![](https://raw.githubusercontent.com/99xtechnology/supuna-initiative/dev/diagram.png?token=AAOEUR2IDC3B3OSYF7A67G27SBXV6)
 
-
-
+ <table>
+ <thead>
+ <tr>
+ <th>Technology</th>
+ <th>Auth</th>
+ <th>File</th>
+ <th>Gateway</th>
+ <th>Initiative</th>
+ <th>Kafka</th>
+ <th>Notification</th>
+ <th>Poster</th>
+ <th>Users</th>
+ <th>Web</th>
+ </tr> 
+ <tbody>
+ <tr>
+ <td>NodeJs/Koa 2</td>
+ <td bgcolor="green">YES</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>YES</td>
+ <td>NO</td>
+ <td>YES</td>
+ <td>NO</td>
+ <td>YES</td>
+ <td>NO</td>
+ </tr>
+ <tr>
+ <td>PHP/Laravel</td>
+ <td>&nbsp;NO</td>
+ <td>&nbsp;NO</td>
+ <td>&nbsp;NO</td>
+ <td>&nbsp;NO</td>
+ <td>&nbsp;NO</td>
+ <td>YES</td>
+ <td>&nbsp;NO</td>
+ <td>&nbsp;NO</td>
+ </tr>
+ <tr>
+ <td>Docker Containers</td>
+ <td bgcolor="green">&nbsp;YES</td>
+ <td>NO</td>
+ <td>YES</td>
+ <td>YES</td>
+ <td>YES</td>
+ <td>YES</td>
+ <td>YES</td>
+ <td>YES</td>
+ <td>YES</td>
+ </tr>
+ <tr>
+ <td>MongoDB</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>YES</td>
+ <td>NO</td>
+ <td>YES</td>
+ <td>NO</td>
+ <td>YES</td>
+ <td>NO</td>
+ </tr>
+ <tr>
+ <td>MariaDB</td>
+ <td>NO</td>
+ <td>&nbsp;NO</td>
+ <td>&nbsp;NO</td>
+ <td>&nbsp;NO</td>
+ <td>&nbsp;NO</td>
+ <td>&nbsp;NO</td>
+ <td>&nbsp;NO</td>
+ <td>&nbsp;NO</td>
+ <td>&nbsp;NO</td>
+ </tr>
+ <tr>
+ <td>Azure Active Directory/OAuth 2</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ </tr>
+ <tr>
+ <td>Kafka</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>YES</td>
+ <td>YES</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ </tr>
+ <tr>
+ <td><a href="http://Socket.IO">Socket.IO</a></td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>YES</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ </tr>
+ <tr>
+ <td>Kong</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>YES</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ </tr>
+ <tr>
+ <td>ReactJs/Redux</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>YES</td>
+ </tr>
+ <tr>
+ <td>Material-UI</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>YES</td>
+ </tr>
+ <tr>
+ <td>Serverless Framework</td>
+ <td>NO</td>
+ <td>YES</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ </tr>
+ <tr>
+ <td>AWS Lambda</td>
+ <td>NO</td>
+ <td>YES</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ <td>NO</td>
+ </tr>
+ </tbody>
+ </table>
+ 
 ## Services
 
 -   User
@@ -131,13 +302,13 @@ _Initiative Action_
     uuid: String,
     name: String,
     users: [{
-        type: Schema.Types.ObjectId,
-        ref: 'InitiativeMemberModel',
+ type: Schema.Types.ObjectId,
+ ref: 'InitiativeMemberModel',
     }],
     initiative: Schema.Types.ObjectId,
     year: {
-        type: Schema.Types.ObjectId,
-        ref: 'InitiativeYearModel', 
+ type: Schema.Types.ObjectId,
+ ref: 'InitiativeYearModel', 
     },
     description: String,
     deadline: { type: Date, default: null },
@@ -325,25 +496,25 @@ _Initiative Review Cycle Evaluation Criteria_
 ```javascript 
 {
     cycle: {
-        type: Schema.Types.ObjectId,
-        ref: 'InitiativeReviewCycleModel', 
+ type: Schema.Types.ObjectId,
+ ref: 'InitiativeReviewCycleModel', 
     },
     initiative: {
-        type: Schema.Types.ObjectId,
-        ref: 'InitiativeModel', 
+ type: Schema.Types.ObjectId,
+ ref: 'InitiativeModel', 
     },
     evaluation_criteria: [{
-        criteria: {
-            type: Schema.Types.ObjectId,
-            ref: 'InitiativeEvaluationCriteria', 
-        },
-        points: {
-            type: Number,
-            default: 0,
-            min: 0,
-            max: 100,
-        },
-        note: String,
+ criteria: {
+     type: Schema.Types.ObjectId,
+     ref: 'InitiativeEvaluationCriteria', 
+ },
+ points: {
+     type: Number,
+     default: 0,
+     min: 0,
+     max: 100,
+ },
+ note: String,
     }],
     created_at: { type: Date, default: Date.now },
 }
@@ -384,7 +555,6 @@ Currently, auth service uses Azure active directory to authenticate user to the 
 Technologies:
 
 -   NodeJs/[Koa 2](https://koajs.com/)
--   MongoDB
 -   Docker containers 
 -   [Azure Active Directory/OAuth 2](https://azure.microsoft.com/en-us/services/active-directory/)
  
