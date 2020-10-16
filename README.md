@@ -1,7 +1,21 @@
 # 99X Initiatives
 
+### User Service
 
 ![](https://raw.githubusercontent.com/99xtechnology/supuna-initiative/dev/diagram.png?token=AAOEUR2IDC3B3OSYF7A67G27SBXV6)
+
+- [Tech Stack](#tech-stack)
+- [Services](#services)
+  * [User Service](#user-service)
+  * [Initiative Service](#initiative-service)
+  * [Auth Service](#auth-service)
+  * [Notification Service](#notification-service)
+  * [Gateway Service](#gateway-service)
+  * [Poster Service](#poster-service)
+  * [Web Service](#web-service)
+  * [File Service](#file-service)
+  
+## Tech Stack
 
  |Technology|Auth|File|Gateway|Initiative|Kafka|Notification|Poster|Users|Web|
  |--- |--- |--- |--- |--- |--- |--- |--- |--- |--- |
